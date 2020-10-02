@@ -31,6 +31,7 @@ $connect = mysqli_connect("localhost","root","") or die(mysqli_error());
 mysqli_select_db($connect,"result") or die(mysqli_error());
 
 if($name){
+    //we have already created database with no values.
 $write = mysqli_query($connect,"INSERT INTO class1 VALUES('','$name','$sub1','$sub2','$sub3','$sub4','$sub5','$total_obtained','$total_marks','$percentage')") or die(mysqli_error($connect));
 }
 mysqli_close($connect);
