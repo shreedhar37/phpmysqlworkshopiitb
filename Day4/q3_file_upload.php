@@ -13,12 +13,11 @@
 
 <?php
 /*
-$target_dir = "uploads/" - specifies the directory where the file is going to be placed
+$target_dir = "Day4/" - specifies the directory where the file is going to be placed
 $target_file specifies the path of the file to be uploaded
 $uploadOk=1 is not used yet (will be used later)
-$imageFileType holds the file extension of the file (in lower case)
-Next, check if the image file is an actual image or a fake image
 */
+
 if(isset($_POST["submit"])){
 $target_dir = "Day4/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
