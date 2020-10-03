@@ -18,7 +18,7 @@ if($str)
     echo "You have sumbitted <b>$str</b> as string<br><br>";
     echo "The number of characters in string are: ". strlen($str)."<br>";
     echo "String after converted into array: ";
-    print_r (explode(" ",$str));
+    echo var_dump(str_split($str));
     echo "<br>";
     echo "String Reverse: ". strrev($str)."<br>";
     echo "The string in lower case: ". strtolower($str)."<br>";
