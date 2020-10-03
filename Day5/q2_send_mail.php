@@ -19,16 +19,16 @@ if(@$_POST["submit"])
  echo "Thanks for giving feedback.";   
  $name = @$_POST["name"];
  $mailto = @$_POST["mail"];
- $adminmail= "chavanshrsa18it@student.mes.ac.in";
+ $adminmail= "meshree4@gmail.com";
  $feedback = @$_POST["feedback"];
  $subject = "Feedback";
- $msg = "Hey $name thanks for filling feedback. Here is what we got from you.\n";
+ $msg = "Hey $name thanks for filling feedback. Here is what we got from you: \n";
  $finalmsg = $msg . $feedback;
  $finalmsg = wordwrap($finalmsg, 70);
  $headers = "From: meshree4@gmail.com";
  $headers1 = "From: $mailto";
 
- $msg1 = "Here is what we got from $name mail($mailto)\n.";
+ $msg1 = "Here is what we got from $name ($mailto): \n";
  $finalmsg1 = $msg1 . $feedback;
  $finalmsg1 = wordwrap($finalmsg1,70); 
  $headers1 = "From: $mailto";
