@@ -26,6 +26,7 @@ if(@$_POST["submit"])
  $finalmsg = $msg . $feedback;
  $finalmsg = wordwrap($finalmsg, 70);
  $headers = "From: chavanshrsa18it@student.mes.ac.in";
+ $headers1 = "From: $mailto";
 
  $msg1 = "Here is what we got from $name mail($mailto)\n.";
  $finalmsg1 = $msg1 . $feedback;
@@ -33,7 +34,7 @@ if(@$_POST["submit"])
  $headers1 = "From: $mailto";
  
  mail($mailto,$subject,$finalmsg,$headers);
- mail($adminmail,$subject,$finalmsg1,$headers);
+ mail($adminmail,$subject,$finalmsg1,$headers1);
 
 }
 
