@@ -27,13 +27,21 @@ $sub5 = @$_POST["m5"];
 $total_obtained = (@$_POST["m1"] + @$_POST["m2"] + @$_POST["m3"] + @$_POST["m4"] + @$_POST["m5"]);
 $total_marks = 500;
 $percentage = ((@$_POST["m1"] + @$_POST["m2"] + @$_POST["m3"] + @$_POST["m4"] + @$_POST["m5"]) / 500) * 100;
-$connect = mysqli_connect("localhost","root","") or die(mysqli_error());
-mysqli_select_db($connect,"result") or die(mysqli_error());
 
-if($name){
+//connecting to database.
+$connect = mysqli_connect("localhost","root","") or die(mysqli_error());
+mysqli_select_db($connect,"result") or die(mysqli_error()); 
+
+if($name)
+{
     //we have already created database with no values.
-$write = mysqli_query($connect,"INSERT INTO class1 VALUES('','$name','$sub1','$sub2','$sub3','$sub4','$sub5','$total_obtained','$total_marks','$percentage')") or die(mysqli_error($connect));
+    //We have Auto Incremented id value in database.
+    $insert = "INSERT INTO class1 VALUES('','$name','$sub1','$sub2','$sub3','$sub4','$sub5','$total_obtained','$total_marks','$percentage')";
+    
+    $write = mysqli_query($connect,$insert) or die(mysqli_error($connect)); // inserting values in database
 }
+
+//closing database connection.
 mysqli_close($connect);
 
 if ($name)
