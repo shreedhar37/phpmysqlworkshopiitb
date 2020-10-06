@@ -8,7 +8,7 @@ switch($str) {
         case 'i':
         case 'o':
         case 'u':
-         echo "$str";
+         echo "$str is a vowel.";
          break;
         default:
          echo "it's a consonant";
