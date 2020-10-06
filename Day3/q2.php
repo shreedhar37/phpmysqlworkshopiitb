@@ -6,8 +6,9 @@ mysqli_select_db($connect,"result") or die("Connection Failed");
 
 
 if ($connect) {
+$select = "SELECT * FROM class1 WHERE name='Rohan'";
 
-$extract = mysqli_query($connect,"SELECT * FROM class1 WHERE name='Rohan'");
+$extract = mysqli_query($connect,$select);
 
 while ($row = mysqli_fetch_assoc($extract)) {
 
@@ -20,11 +21,19 @@ $name1 = $row["name"];
 $newtotal = $sub1+$sub2+$sub3+$sub4+$sub5;
 $newpercent = ($newtotal / 500 ) * 100 ;
 
-mysqli_query($connect,"UPDATE class1  SET sub5='$sub5' , total_obtained = '$newtotal' , percent = '$newpercent' WHERE name='$name1'");
+$update = "UPDATE class1  SET sub5='$sub5' , total_obtained = '$newtotal' , percent = '$newpercent' WHERE name='$name1'";
+// updating the database.
+
+mysqli_query($connect,$update) or die(mysql_error($connect));
+
 }
-echo "<h2><b>Marks updated succesfully</b></h2>";
-}
+
 mysqli_close($connect); 
+
+echo "<h2><b>Marks updated succesfully</b></h2>";
+
+}
+ 
 ?>
 
 
