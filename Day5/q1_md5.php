@@ -26,8 +26,8 @@ if (@$_POST["submit"])
     
     if ($connect)
     {   
-    
-        $extract = mysqli_query($connect,"SELECT * FROM data1 WHERE EXISTS uname=$username");
+        $select = "SELECT * FROM data1 WHERE EXISTS uname=$username";
+        $extract = mysqli_query($connect,$select);
         while ($row = mysqli_fetch_assoc($extract)) 
         {
          $uname = $row["uname"];            
@@ -38,7 +38,9 @@ if (@$_POST["submit"])
         }
         else
         {
-        $write = mysqli_query($connect,"INSERT INTO data1 VALUES('$username','$password')") or die(mysqli_error($connect));
+            $insert = "INSERT INTO data1 VALUES('$username','$password'";
+            
+            $write = mysqli_query($connect,$insert) or die(mysqli_error($connect));
         }                
         
     }
