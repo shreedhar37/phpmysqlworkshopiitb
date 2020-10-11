@@ -38,7 +38,7 @@ if (@$_POST["submit"])
         }
         else
         {
-            $insert = "INSERT INTO data1 VALUES('$username','$password'";
+            $insert = "INSERT INTO data1 VALUES('$username','$password')";
             
             $write = mysqli_query($connect,$insert) or die(mysqli_error($connect));
         }                
