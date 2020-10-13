@@ -14,6 +14,9 @@
             <input type="submit" value= "Register" name="register"><br><br>
             </form>
             
+            <form action="index.php" method="POST">
+            <input type="submit" name="submit" value="Home">
+            </form>
             </div>');
  
         
