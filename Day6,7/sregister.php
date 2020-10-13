@@ -23,6 +23,7 @@ if(isset($_POST["register"]))
 if (@$_POST['submit'])
 {
 
+  print('<h3><a href="index.php" style="text-align:center;">Home</a></h3><br><br><br>');
 
 $email = $_POST["email"];
 
@@ -42,9 +43,9 @@ mysqli_select_db($connect,"marksheet") or die(mysqli_error());
 if($connect)
 {
   $name = $_POST["name"];
-  $uname = md5($_POST["uname"]);
+  $uname = ($_POST["uname"]);
   $email = $_POST["email"];
-  $pswd = $_POST["pswd"];
+  $pswd = md5($_POST["pswd"]);
   
 
 
